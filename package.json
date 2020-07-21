@@ -1,0 +1,14 @@
+{
+  "name": "zy-element",
+  "version": "1.0.2",
+  "main": "index.js",
+  "author": "hzfvictory",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.6.11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hzfvictory/zy-element.git"
+  }
+}
