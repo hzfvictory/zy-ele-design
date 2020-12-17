@@ -5,7 +5,8 @@
   "author": "hzfvictory",
   "license": "MIT",
   "dependencies": {
-    "vue": "^2.6.11"
+    "echarts": "^5.0.0",
+    "resize-detector": "^0.2.2"
   },
   "repository": {
     "type": "git",

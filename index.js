@@ -1,11 +1,16 @@
-import Vue from 'vue';
+import EditFormHeader from "./packages/components/EditFormHeader"
+import EnhanceTable from "./packages/components/EnhanceTable"
+import EchartsForVue from "./packages/components/EchartsForVue"
+import Select from "./packages/components/Select"
+import WithSearch from "./packages/components/WithSearch"
 
-import EditFormHeader from "./EditFormHeader"
-import Select from "./Select"
-import TableList from "./TableList"
+import utils from "./packages/utils"
 
-export default { EditFormHeader, Select, TableList }
+export {EditFormHeader, Select, EnhanceTable, utils}
 
-Vue.component("table-list", TableList);
-Vue.component("my-select", Select);
-Vue.component("edit-form-header", EditFormHeader);
+EditFormHeader.install = Vue => Vue.component('edit-form-header', EditFormHeader);
+EnhanceTable.install = Vue => Vue.component('table-list', EnhanceTable);
+EchartsForVue.install = Vue => Vue.component('echarts-for-vue', EchartsForVue);
+Select.install = Vue => Vue.component('my-select', Select);
+WithSearch.install = Vue => Vue.component('with-search', WithSearch);
+
