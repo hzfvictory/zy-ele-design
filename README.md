@@ -44,7 +44,7 @@ utils.fn();
 
 ### 报错
 
-![报错详情](https://tva1.sinaimg.cn/large/0081Kckwly1glruqk4nbnj31kw0e276p.jpg)
+<a href="https://tva1.sinaimg.cn/large/0081Kckwly1glruqk4nbnj31kw0e276p.jpg" target="_blank" rel="noopener noreferrer"><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glruqk4nbnj31kw0e276p.jpg" ></a>
 
 原因是是组件中使用了jsx,没有被babel编辑，在项目的`vue.config.js`添加一下代码ok了💪
 
