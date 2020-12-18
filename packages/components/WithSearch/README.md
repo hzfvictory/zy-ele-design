@@ -1,4 +1,4 @@
-**fields**
+### fields
 
 ```javascript
 const searchFields = [
@@ -32,9 +32,9 @@ const searchFields = [
 
 ```vue
 <template>
-<with-search :searchProps="searchProps">
-  // 里面可以写一些额外的按钮
-</with-search>
+    <with-search :searchProps="searchProps">
+      // 里面可以写一些额外的按钮
+    </with-search>
 </template>
 <script>
   import WithSearch from "@/components/WithSearch"
@@ -88,10 +88,10 @@ const searchFields = [
   }
 </script>
 ```
-### Options
+### options
 
 | 参数名   | 作用                                           | 类型   | 默认值 |
-| :------- | :--------------------------------------------- | :----- | :----- |
+| :------- | :------------------------------------------- | :----- | :----- |
 | search   | 搜索初始值                                     | object | {}     |
 | fields   | 必填，搜索表单项                               | array  | []     |
 | onSearch | 查询操作                                       | fun    | 无     |

@@ -91,12 +91,11 @@
 </style>
 ```
 
-### Options
+### options
 
-| Name              | Type       | Default              | Description                    |
-| ----------------- | ---------- | -------------------- | ------------------------------ |
-| **`otherTableParams`**  | `{ Object }` |   ...   | 列表参数集合 |
-| **`otherPaginationParams`**   | `{Object}` |  ... | 分页参数集合      |
-| **`tableColumn`** | `{Array}` | []          |  列表column数据    |
-| **`multiple`** | `{Boolean}`  |  false    | 列表是否支持多选    |
-
+| Name              | Type       | Default              | Description           |
+| :-------------- | :---------- | :----------------- | :----------------------- |
+| otherTableParams  | { Object } |   ...   | 列表参数集合 |
+| otherPaginationParams   | {Object} |  ... | 分页参数集合      |
+| tableColumn | {Array} | []          |  列表column数据    |
+| multiple | {Boolean}  |  false    | 列表是否支持多选    |
