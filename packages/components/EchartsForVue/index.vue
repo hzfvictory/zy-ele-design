@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import echarts from './echarts'
+  import {echarts} from './echarts'
   import {addListener, removeListener} from 'resize-detector'
 
   export default {

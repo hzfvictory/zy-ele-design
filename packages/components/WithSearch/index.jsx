@@ -1,9 +1,14 @@
+import Select from "../Select"
+
 export default {
   data() {
     const {searchProps} = this;
     return {
       searchData: searchProps.search || {},
     }
+  },
+  components: {
+    enhanceSelect: Select
   },
   props: {
     searchProps: {
@@ -31,13 +36,15 @@ export default {
       return (
         <el-form-item prop={item.key}>
           {item.label !== false && <div class="prepend small">{item.name}</div>}
-          <zy-select v-model={this.searchData[item.key]}
-                     type={item.enumType}
-                     data={item.enums}
-                     multiple={item.multiple}
-                     collapse={item.collapse}
-                     style={{...item.styles}}
-                     placeholder="全部"/>
+          <enhance-select
+            v-model={this.searchData[item.key]}
+            type={item.enumType}
+            data={item.enums}
+            multiple={item.multiple}
+            collapse={item.collapse}
+            style={{...item.styles}}
+            placeholder="全部"
+          />
         </el-form-item>
       )
     },
@@ -137,5 +144,3 @@ export default {
     );
   }
 };
-
-

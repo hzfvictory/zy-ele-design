@@ -1,6 +1,5 @@
 .DS_Store
 node_modules
-/dist
 
 # local env files
 .env.local
@@ -22,5 +21,9 @@ pnpm-debug.log*
 *.sw?
 
 # server
-
 /server
+
+# example
+example/node_modules
+example/.idea
+example/.vscode

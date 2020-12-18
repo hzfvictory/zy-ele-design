@@ -1,15 +1,19 @@
 {
-  "name": "zy-element",
-  "version": "1.0.8",
+  "name": "zy-ele-design",
+  "version": "0.3.0",
   "main": "index.js",
   "author": "hzfvictory",
   "license": "MIT",
+  "keywords": [
+    "element-ui"
+  ],
+  "description": "二次封装ElementUI",
   "dependencies": {
     "echarts": "^5.0.0",
     "resize-detector": "^0.2.2"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:hzfvictory/zy-element.git"
+    "url": "git@github.com:hzfvictory/zy-ele-design.git"
   }
 }
