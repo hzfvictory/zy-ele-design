@@ -27,3 +27,4 @@ pnpm-debug.log*
 example/node_modules
 example/.idea
 example/.vscode
+example/README.md
