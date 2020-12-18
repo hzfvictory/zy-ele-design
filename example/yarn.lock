@@ -8603,10 +8603,10 @@ zrender@5.0.1:
   dependencies:
     tslib "1.10.0"
 
-zy-ele-design@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.npmjs.org/zy-ele-design/-/zy-ele-design-0.2.0.tgz#42b5084849516e2bf9c10c2cfa11e087ab5b94a2"
-  integrity sha512-B73NRZccUTZpjVvulas+l3pjtV2m5mrUDWjxlJ4LCdzGBUGf9jFomIIysNJrdbazMFMLDOY/01R+pPbw+Sc7zw==
+zy-ele-design@0.2.1:
+  version "0.2.1"
+  resolved "https://registry.npmjs.org/zy-ele-design/-/zy-ele-design-0.2.1.tgz#e45a0d43adcb5d25869313dca873e48625f94dbd"
+  integrity sha512-Wud3PW3Vm30z0pBLXXTFZp4X7VX2W6TDRWxcVKrKdvTu8k5yCBN8AgL5SKip4Vu1XTvRmlpyl5UztwLBerShFA==
   dependencies:
     echarts "^5.0.0"
     resize-detector "^0.2.2"

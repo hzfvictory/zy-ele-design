@@ -6,11 +6,10 @@ import WithSearch from "./packages/components/WithSearch"
 
 import * as utils from "./utils"
 
-export {EditFormHeader, Select, EnhanceTable, utils}
+export {EditFormHeader, EnhanceTable, EchartsForVue, Select, WithSearch, utils}
 
+EditFormHeader.install = Vue => Vue.component('edit-form-header', EditFormHeader);
 EnhanceTable.install = Vue => Vue.component('enhance-table', EnhanceTable);
-WithSearch.install = Vue => Vue.component('with-search', WithSearch);
 EchartsForVue.install = Vue => Vue.component('echarts-for-vue', EchartsForVue);
 Select.install = Vue => Vue.component('my-select', Select);
-EditFormHeader.install = Vue => Vue.component('edit-form-header', EditFormHeader);
-
+WithSearch.install = Vue => Vue.component('with-search', WithSearch);

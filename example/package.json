@@ -1,6 +1,6 @@
 {
   "name": "zy-ele-design",
-  "version": "0.1.91",
+  "version": "1.0.0",
   "author": "hzfvictory",
   "license": "MIT",
   "main": "index.js",
@@ -16,7 +16,7 @@
     "element-ui": "^2.13.2",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
-    "zy-ele-design": "^0.2.0"
+    "zy-ele-design": "0.2.1"
   },
   "devDependencies": {
     "@babel/plugin-syntax-jsx": "^7.10.4",
