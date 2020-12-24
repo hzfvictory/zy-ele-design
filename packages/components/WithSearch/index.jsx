@@ -113,7 +113,7 @@ export default {
   // },
   render() {
     const {searchProps: {fields, formData}} = this;
-    formData && this.handlerSearchData
+    if (formData) this.handlerSearchData;
 
     return (
       <div class="searchBox">

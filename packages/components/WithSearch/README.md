@@ -13,7 +13,9 @@ const searchFields = [
     name: '应用分类', // label的名字
     type: 'select', // form的类型  默认是 input
     enums: [{label: '是', value: 1}, {label: '否', value: 0}],  // 选框的数据
-    enumType: {id: 'value', name: 'label'} // 选框的数据格式化
+    enumType: {id: 'value', name: 'label'}, // 选框的数据格式化
+    multiple: true,
+    collapse: true
   },
   {
     key: 'system',

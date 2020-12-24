@@ -3,7 +3,7 @@
 ```javascript
 <my-select 
    v-model="formDataCharts.item1" 
-   :disId="formDataCharts.item2"
+   :disId="formDataCharts.item2" // vue建议小驼峰 dis-id=''
    :data="data"
    :clearable=false 
    placeholder="请选择" 
@@ -29,6 +29,6 @@
 | styles | {Object} | { width: '161px'} |  添加样式「即将废弃」，vue支持直接设置  |
 | onFocus | {Function} | '' |  失去焦点的事件 |
 
-
+`vue建议小驼峰 例:dis-id=''`
 
 
