@@ -91,8 +91,10 @@ export default {
     handleReset() {
       const {searchProps: {onReset}} = this;
       // console.log(this.$refs['formData'].resetFields());
-      this.searchData = {}
-      onReset && onReset()
+      this.searchData = {};
+      this.$nextTick(() => {
+        onReset && onReset()
+      })
     },
     // handlerSearchData(newVal) {
     //   this.searchProps.formData = newVal
