@@ -1,13 +1,13 @@
 {
   "name": "zy-ele-design",
-  "version": "0.2.1",
+  "version": "0.2.3",
   "main": "index.js",
   "author": "hzfvictory",
   "license": "MIT",
   "keywords": [
     "element-ui"
   ],
-  "description": "二次封装ElementUI",
+  "description": "element-ui后台项目前端组件封装和方法库",
   "dependencies": {
     "echarts": "^5.0.0",
     "resize-detector": "^0.2.2"
