@@ -7,7 +7,7 @@
   "keywords": [
     "element-ui"
   ],
-  "description": "element-ui后台项目前端组件封装和方法库",
+  "description": "element-ui 后台项目前端组件封装和方法库",
   "dependencies": {
     "echarts": "^5.0.0",
     "resize-detector": "^0.2.2"

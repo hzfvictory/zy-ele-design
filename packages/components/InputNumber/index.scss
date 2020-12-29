@@ -1,0 +1,34 @@
+// input-number 组件用
+.input_number_text_left {
+  .el-input__inner {
+    text-align: left;
+  }
+}
+
+.input_border_right_none {
+  .el-input__inner {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.input_border_left_none {
+  .el-input__inner {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.input_border_none {
+  .el-input__inner {
+    border-radius: 0;
+  }
+}
+
+.custom_append, .custom_prepend {
+  display: inline-block;
+  width: auto;
+  height: 32px;
+  line-height: 32px;
+  vertical-align: top;
+}

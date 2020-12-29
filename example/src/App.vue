@@ -3,6 +3,22 @@
     <edit-form-header title="edit-form-header"/>
 
     <div style="padding: 24px">
+      <enhance-input-number
+          styles="width: 150px"
+          v-model="value"
+          :lable="[{align:'left',text:'第'},{align:'right',text:'章'}]"
+          :attributes="{
+            controls:false,
+            placeholder:'请输入起始章节'
+          }"
+          :event="{
+          blur:fn
+        }"
+      />
+    </div>
+
+
+    <div style="padding: 24px">
       <my-select v-model="val" :data="[{name:122,id:1}]"/>
     </div>
 
@@ -11,6 +27,8 @@
       </with-search>
       <enhance-table/>
     </div>
+
+
   </div>
 </template>
 
@@ -52,6 +70,7 @@
     components: {},
     data() {
       return {
+        value: undefined,
         val: '',
         searchProps: {
           search: {name: 112},
@@ -65,6 +84,9 @@
       console.log(utils.genID());
     },
     methods: {
+      fn(val) {
+        console.log(val, '0000');
+      },
       handleSearch(data) {
         console.log(data, '搜索');
       },
@@ -74,3 +96,4 @@
     }
   }
 </script>
+

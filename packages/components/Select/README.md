@@ -16,7 +16,7 @@
 
 | Name              | Type       | Default              | Description                    |
 | :--------------- | :---------- | :----------------- | :--------------------------- |
-| value  | {String, Number, Array, Object } |   ''   | v-model传进来的值 |
+| v-model  | {String, Number, Array, Object } |   ''   | v-model |
 | clearable   | {Boolean} | false | 是否有一键清空      |
 | multiple | {Boolean} | false          | 是否支持多选     |
 | collapse | {Boolean} | false          | 多选后以数字展示选择了多少个数     |

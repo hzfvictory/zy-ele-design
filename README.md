@@ -2,7 +2,7 @@
 
 ### 介绍
 
-源于日常中后台系统开发不断的积累,让element-ui使用更加得心应手，实现业务的快速迭代,一些高频次自定义业务组件，和一些常用方法库的封装，支持按需打包.
+源于日常中后台系统开发不断的积累, 让 element-ui 使用更加得心应手，实现业务的快速迭代, 一些高频次自定义业务组件，和一些常用方法库的封装，支持按需打包.
 
 ### 安装
 
@@ -51,6 +51,8 @@ Vue.component('my-select', Select)
 [EnhanceTable](https://github.com/hzfvictory/zy-ele-design/tree/master/packages/components/EnhanceTable)
 
 [WithSearch](https://github.com/hzfvictory/zy-ele-design/tree/master/packages/components/WithSearch)
+
+[InputNumber](https://github.com/hzfvictory/zy-ele-design/tree/master/packages/components/InputNumber)
 
 [...](https://github.com/hzfvictory/zy-ele-design/tree/master/packages/components)
 
