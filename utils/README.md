@@ -1,16 +1,15 @@
-utils是一个常用方法库
+**utils是一个常用方法库**
 
 ```javascript
 import { DATE_FORMAT, formatterNumber } from 'zy-ele-design/utils';
 ```
-### 常量
+#### 常量
 
-DATE_FORMAT： 标准日期格式，YYYY-MM-DD
+> DATE_FORMAT： 标准日期格式，YYYY-MM-DD
+> DATE_TIME_FORMAT： 标准时间格式，YYYY-MM-DD HH:mm:ss
 
-DATE_TIME_FORMAT： 标准时间格式，YYYY-MM-DD HH:mm:ss
 
-
-### API
+#### API
 
 awaitWrap:捕获错误
 
@@ -24,7 +23,7 @@ getBLen:查看文字的长度  一个文字抵两位数字
 
 formatterNumber:数字千位一个逗号
 
-### 正则表达式
+#### 正则表达式
 
 使用
 
