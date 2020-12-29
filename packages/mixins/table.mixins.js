@@ -12,7 +12,7 @@ const table = {
         "selection-change": this.handleSelectionChange
       },
       paginationOptions: {
-        class: "table-pagination",
+        class: "fyDiv",
         background: true, // 带有背景色
         layout: "total, sizes, prev, pager, next",
         pageSizes: [10, 20, 30, 40],

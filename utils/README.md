@@ -5,9 +5,9 @@ import { DATE_FORMAT, formatterNumber } from 'zy-ele-design/utils';
 ```
 #### 常量
 
-> DATE_FORMAT： 标准日期格式，YYYY-MM-DD
+DATE_FORMAT:标准日期格式，YYYY-MM-DD
 
-> DATE_TIME_FORMAT： 标准时间格式，YYYY-MM-DD HH:mm:ss
+DATE_TIME_FORMAT:标准时间格式，YYYY-MM-DD HH:mm:ss
 
 
 #### API
