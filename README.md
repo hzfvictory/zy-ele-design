@@ -56,12 +56,13 @@ Vue.component('my-select', Select)
 
 [...](https://github.com/hzfvictory/zy-ele-design/tree/master/packages/components)
 
-### 内置函数方法
+### [公共方法库](https://github.com/hzfvictory/zy-ele-design/blob/master/utils)
+
 ```javascript
 // import {utils} from "zy-ele-design"
-import * as utils from "zy-ele-design/utils"
-
-utils.fn();
+import {Rules, genID} from "zy-ele-design/utils"
+const {emojiReg} = Rules; // 正则
+// Rules.emojiReg;
 ```
 
 ### 报错

@@ -1,3 +1,13 @@
+/* 常用常量 */
+export const PAGEPARAMS = {
+  pageSize: 1000, //每页显示多少条
+  pageNum: 1 //当前页数
+};
+export const STARTTIME = '00:00:00'
+export const ENDTIME = '23:59:59'
+export const DATE_FORMAT = 'YYYY-MM-DD';
+export const DATE_TIME_FORMAT = 'YYYY-MM-DD HH:mm:ss';
+
 /**
  * 捕获错误
  * @param  {function} promise 异步函数
@@ -48,7 +58,7 @@ export const getBLen = (str) => {
  * @param  {number} val 保留几位小数 默认为2
  */
 export const formatterNumber = (num, val = 2) => {
-  if (thousandNumReg.test(num)) return num; // 如果后台已经转化为千分位，前端不做处理直接返回
+  if (Rules.thousandNumReg.test(num)) return num; // 如果后台已经转化为千分位，前端不做处理直接返回
   let nwe_num = parseFloat(num, 10); // 转数字操作
   if (isNaN(nwe_num)) return num; // 防止是NaN
   const [integer, decimal = ''] = nwe_num.toLocaleString().split('.');
@@ -57,9 +67,9 @@ export const formatterNumber = (num, val = 2) => {
   return integer + '.' + decimal.padEnd(val, '0');
 };
 
-// 千分位正则
-export const thousandNumReg = /^(-)?\d{1,3}(,\d{3})+(.\d+)?$/;
-// 手机号正则
-export const phoneReg = /^1\d{10}$/;
-// emoji表情的正则
-export const emojiReg = /(\ud83c[\udf00-\udfff])|(\ud83d[\udc00-\ude4f])|(\ud83d[\ude80-\udeff])/;
+/* 正则 */
+export const Rules = {
+  thousandNumReg: /^(-)?\d{1,3}(,\d{3})+(.\d+)?$/,// 千分位正则
+  phoneReg: /^1\d{10}$/,// 手机号正则
+  emojiReg: /(\ud83c[\udf00-\udfff])|(\ud83d[\udc00-\ude4f])|(\ud83d[\ude80-\udeff])/,// emoji表情的正则
+}
