@@ -23,8 +23,3 @@ pnpm-debug.log*
 # server
 /server
 
-# example
-example/node_modules
-example/.idea
-example/.vscode
-example/README.md
