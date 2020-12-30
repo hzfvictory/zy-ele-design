@@ -2,6 +2,7 @@
 
 ```javascript
 <enhance-input-number
+    class="input_number_text_center" // 居中展示
     styles="width: 150px"
     v-model="value"
     :lable="[{align:'left',text:'第'},{align:'right',text:'章'}]"

@@ -62,7 +62,7 @@ export default {
   render() {
     const {styles, value, attributes, event} = this;
     return (
-      <div>
+      <div class={'zy_ele_design_input-number'}>
         {this.prependTitle()}
         <el-input-number
           class={this.handleClass()}
