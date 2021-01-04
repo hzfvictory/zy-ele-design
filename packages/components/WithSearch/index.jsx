@@ -2,10 +2,12 @@ import Select from "../Select"
 
 export default {
   data() {
+    let searchData = {};
     const {searchProps} = this;
-    return {
-      searchData: searchProps.search || {},
-    }
+    searchProps.fields?.length && [...searchProps.fields].map((item) => {
+      searchData[item.key] = item.defaultValue || undefined;
+    })
+    return {searchData}
   },
   components: {
     enhanceSelect: Select
@@ -90,8 +92,8 @@ export default {
     },
     handleReset() {
       const {searchProps: {onReset}} = this;
-      // console.log(this.$refs['formData'].resetFields());
-      this.searchData = {};
+      this.$refs['formData'].resetFields();
+      // this.searchData = {};
       this.$nextTick(() => {
         onReset && onReset()
       })

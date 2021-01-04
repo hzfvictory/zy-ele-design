@@ -5,13 +5,6 @@
       text-align: left;
     }
   }
-
-  .input_number_text_center .input_number_text_left {
-    .el-input__inner {
-      text-align: center;
-    }
-  }
-
   .input_border_right_none {
     .el-input__inner {
       border-top-right-radius: 0;
@@ -38,5 +31,11 @@
     height: 32px;
     line-height: 32px;
     vertical-align: top;
+  }
+}
+
+.zy_ele_design_input-number.input_number_text_center {
+  .el-input__inner {
+    text-align: center;
   }
 }

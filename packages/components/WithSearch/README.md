@@ -51,7 +51,8 @@ const searchFields = [
       name: '应用分类', 
       type: 'select', 
       enums: [{label: '是', value: 1}, {label: '否', value: 0}], 
-      enumType: {id: 'value', name: 'label'} 
+      enumType: {id: 'value', name: 'label'},
+      defaultValue:[]
     },
     {
       key: 'system',
@@ -80,7 +81,6 @@ const searchFields = [
     data() {
       return {
         searchProps: {
-          search: {name: 112},  
           fields: searchFields, 
           onSearch: this.handleSearch, 
           onReset: this.handleReset, 
@@ -94,10 +94,21 @@ const searchFields = [
 
 | 参数名   | 作用                                           | 类型   | 默认值 |
 | :------- | :------------------------------------------- | :----- | :----- |
-| search   | 搜索初始值                                     | object | {}     |
-| fields   | 必填，搜索表单项                               | array  | []     |
+| fields   | 必填，搜索表单项, 详细看下表              | array  | []     |
 | onSearch | 查询操作                                       | fun    | 无     |
 | onReset  | 查询重置操作, 只有设置了此项，重置按钮才会显示 | fun    | 无     |
 | formData | 获取form表单的值 | object | {}   |
 
 
+### fields
+
+| 参数名   | 说明             |  可选值 | 默认值 |
+| :------- | :---------- |  :----- | :----- |
+|  key   |  传入 Form 组件的 model 中的字段     |   -   |   必填   | 
+|  name   |    标签文本     |      |      | 
+|  type   |    前选框类型     |    select   |   input   | 
+|  enums   |    前选框的数据     |  -    |  []    | 
+|  enumType   |   选框的数据格式化      |  -    |   {id:'id',name:'name'}   | 
+|  multiple   |    是否支持多选    |   -   |   -   | false
+|  collapse   |    多选后以数字展示选择了多少个数     |  -    |  false    | 
+|  defaultValue   |   选框默认值      |   -   |  undefined    | 

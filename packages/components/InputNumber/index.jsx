@@ -23,7 +23,7 @@ export default {
       type: Object,
     },
     styles: {type: String, default: 'width:100%'},
-    value: {type: Number, default: undefined},
+    value: {type: [Number, String], default: undefined},
     lable: {
       type: Array, default() {
         return []

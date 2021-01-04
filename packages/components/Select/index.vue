@@ -67,26 +67,25 @@
             width: '161px'
           }
         }
-      },
-      onFocus: Function
-    },
-    created() {
+      }
     },
     methods: {
       renderLabel(id, val, all) {
         if (all) {
           return id + '一' + val
         }
-        return val
+        return val;
       },
       input(val) {
-        this.$emit('input', val)
+        this.$emit('input', val);
       },
-      focus() {
-        this.$emit('onFocus')
+      focus(ev) {
+        this.$emit('onFocus', ev); // 历史遗留
+        this.$emit('focus', ev);
       },
       change(val) {
-        this.$emit('onChange', val)
+        this.$emit('onChange', val); // 历史遗留
+        this.$emit('change', val);
       }
     }
   }

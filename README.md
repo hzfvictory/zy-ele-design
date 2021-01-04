@@ -12,7 +12,7 @@ yarn add zy-ele-design
 
 ### 使用
 
-**三种用法**
+三种用法
 
 1. 全局声明按需加载
 ```javascript
@@ -23,7 +23,7 @@ import {Select} from "zy-ele-design"
 Vue.use(Select)
 ```
 
-2.使用component自定义组件名称
+2. 使用component自定义组件名称
 ```javascript
 // main.js
 import Vue from 'vue';
@@ -31,7 +31,6 @@ import {Select} from "zy-ele-design"
 
 Vue.component('my-select', Select)
 ```
-
 3. 自定义名称
 ```javascript
 <script>
