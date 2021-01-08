@@ -11,7 +11,7 @@
   }
 </script>
 
-<style scoped type="text/scss" lang="scss">
+<style type="text/scss" lang="scss">
     .form-header {
         padding: 0 24px;
         box-sizing: border-box;

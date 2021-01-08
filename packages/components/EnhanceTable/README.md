@@ -2,7 +2,11 @@
 
 ```vue
 <template>
-    <table-list ref="table" :multiple="true" :otherTableParams="otherTableParams" :tableColumn="column"
+    <table-list 
+        ref="table" 
+        :multiple="true" 
+        :otherTableParams="otherTableParams" 
+        :tableColumn="column"
     />
 </template>
 <script>

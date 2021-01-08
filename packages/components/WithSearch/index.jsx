@@ -4,6 +4,7 @@ export default {
   data() {
     let searchData = {};
     const {searchProps} = this;
+    // 下面循环赋值的时候，一定要拷贝一份，不然响应的是之前的老数据
     searchProps.fields?.length && [...searchProps.fields].map((item) => {
       searchData[item.key] = item.defaultValue || undefined;
     })
@@ -97,24 +98,13 @@ export default {
       this.$nextTick(() => {
         onReset && onReset()
       })
-    },
-    // handlerSearchData(newVal) {
-    //   this.searchProps.formData = newVal
-    // }
+    }
   },
   computed: {
     handlerSearchData() {
       this.searchProps.formData = this.searchData
     }
   },
-  // watch: {
-  //   searchData: {
-  //     // 页面能实时获取到数据
-  //     handler: 'handlerSearchData',
-  //     deep: true,
-  //     immediate: true
-  //   },
-  // },
   render() {
     const {searchProps: {fields, formData}} = this;
     if (formData) this.handlerSearchData;
