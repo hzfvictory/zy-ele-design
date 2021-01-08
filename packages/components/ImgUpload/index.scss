@@ -1,0 +1,69 @@
+.zy-ele-design-upload {
+  .avatar-uploader {
+    .el-upload {
+      border: 1px dashed #d9d9d9;
+      border-radius: 6px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+
+      .icon-control {
+        display: none;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 20px;
+        bottom: 0;
+        right: 0;
+        transition: all 0.05s;
+      }
+
+      .el-icon-delete, .el-icon-zoom-in {
+        position: absolute;
+        top: 50%;
+        font-size: 20px;
+        color: #fff;
+        transform: translate(0, -50%);
+      }
+
+      .el-icon-zoom-in {
+        left: 40px;
+      }
+
+      .el-icon-delete {
+        right: 40px;
+      }
+
+      &:hover {
+        border-color: #409eff;
+
+        .icon-control {
+          display: block;
+        }
+      }
+
+      .avatar-uploader-icon {
+        font-size: 38px;
+        width: 147px;
+        height: 147px;
+        line-height: 147px;
+        text-align: center;
+        color: #d8d8d8;
+      }
+
+      .avatar {
+        width: 147px;
+        height: 147px;
+        display: block;
+      }
+    }
+  }
+
+  .avatar-success {
+    .el-upload {
+      border: none;
+    }
+  }
+}

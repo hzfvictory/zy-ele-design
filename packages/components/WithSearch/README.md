@@ -15,7 +15,8 @@ const searchFields = [
     enums: [{label: '是', value: 1}, {label: '否', value: 0}],  // 选框的数据
     enumType: {id: 'value', name: 'label'}, // 选框的数据格式化
     multiple: true,
-    collapse: true
+    collapse: true,
+    defaultValue: []
   },
   {
     key: 'system',
@@ -94,7 +95,7 @@ const searchFields = [
 
 | 参数名   | 作用                                           | 类型   | 默认值 |
 | :------- | :------------------------------------------- | :----- | :----- |
-| fields   | 必填，搜索表单项, 详细看下表              | array  | []     |
+| `fields`   | 必填，搜索表单项, 详细看下表              | array  | []     |
 | onSearch | 查询操作                                       | fun    | 无     |
 | onReset  | 查询重置操作, 只有设置了此项，重置按钮才会显示 | fun    | 无     |
 | formData | 获取form表单的值 | object | {}   |

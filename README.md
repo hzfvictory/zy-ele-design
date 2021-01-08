@@ -45,6 +45,7 @@ Vue.component('my-select', Select)
 
 ### 内置组件
 
+
 [Select](https://github.com/hzfvictory/zy-ele-design/tree/master/packages/components/Select)
 
 [EnhanceTable](https://github.com/hzfvictory/zy-ele-design/tree/master/packages/components/EnhanceTable)
@@ -53,7 +54,9 @@ Vue.component('my-select', Select)
 
 [InputNumber](https://github.com/hzfvictory/zy-ele-design/tree/master/packages/components/InputNumber)
 
-[...](https://github.com/hzfvictory/zy-ele-design/tree/master/packages/components)
+[ImgUpload](https://github.com/hzfvictory/zy-ele-design/tree/master/packages/components/ImgUpload)
+
+[...其它](https://github.com/hzfvictory/zy-ele-design/tree/master/packages/components)
 
 ### [公共方法库](https://github.com/hzfvictory/zy-ele-design/blob/master/utils)
 
