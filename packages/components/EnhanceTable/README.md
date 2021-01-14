@@ -33,7 +33,8 @@
           {
             prop: 'roleName',
             label: "角色名称",
-            'width': "110"
+            'width': "110",
+            'show-overflow-tooltip': true
           },
           {
             prop: "createTime",

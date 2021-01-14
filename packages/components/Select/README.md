@@ -6,6 +6,8 @@
    :disId="formDataCharts.item2" // vue建议小驼峰 dis-id=''
    :data="data"
    :clearable=false 
+   multiple
+   collapse
    placeholder="请选择" 
    :key-value="false"
    @change='fn'
@@ -19,7 +21,7 @@
 | Name              | Type       | Default              | Description                    |
 | :--------------- | :---------- | :----------------- | :--------------------------- |
 | v-model  | {String, Number, Array, Object } |   ''   | v-model |
-| clearable   | {Boolean} | false | 是否有一键清空      |
+| clearable   | {Boolean} | true | 是否有一键清空      |
 | multiple | {Boolean} | false          | 是否支持多选     |
 | collapse | {Boolean} | false          | 多选后以数字展示选择了多少个数     |
 | keyValue/key-value | {Boolean} | true          |  key-value的形式展示     |
