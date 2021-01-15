@@ -36,12 +36,12 @@ export default {
       this.$emit('change', val)
     },
     prependTitle() {
-      const item = this.lable.find((item) => item?.align === 'left');
-      return item && <div class="el-input-group__prepend custom_prepend">{item?.text}</div>
+      const item = this.lable.find((item={}) => item.align === 'left');
+      return item && <div class="el-input-group__prepend custom_prepend">{item.text}</div>
     },
     appendTitle() {
-      const item = this.lable.find((item) => item?.align === 'right');
-      return item && <div class="el-input-group__append custom_append">{item?.text}</div>
+      const item = this.lable.find((item={}) => item.align === 'right');
+      return item && <div class="el-input-group__append custom_append">{item.text}</div>
     },
     handleClass() {
       const {lable} = this;

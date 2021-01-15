@@ -3,9 +3,9 @@ import Select from "../Select"
 export default {
   data() {
     let searchData = {};
-    const {searchProps} = this;
+    const {searchProps:{fields=[]}} = this;
     // 下面循环赋值的时候，一定要拷贝一份，不然响应的是之前的老数据
-    searchProps.fields?.length && [...searchProps.fields].map((item) => {
+    fields.length && [...searchProps.fields].map((item) => {
       searchData[item.key] = item.defaultValue || undefined;
     })
     return {searchData}
