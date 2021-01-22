@@ -3,7 +3,9 @@ import Select from "../Select"
 export default {
   data() {
     let searchData = {};
-    const {searchProps:{fields=[]}} = this;
+    const searchProps = this.searchProps || {}; // 兼容老版本
+    const {fields = []} = searchProps;
+
     // 下面循环赋值的时候，一定要拷贝一份，不然响应的是之前的老数据
     fields.length && [...searchProps.fields].map((item) => {
       searchData[item.key] = item.defaultValue || undefined;
@@ -25,7 +27,7 @@ export default {
     typeInput(item) {
       return (
         <el-form-item prop={item.key}>
-          {item.label !== false && <div class="prepend small">{item.name}</div>}
+          {item.name !== false && <div class="prepend small">{item.name}</div>}
           <el-input
             clearable={true}
             style={{width: '160px', ...item.styles}}
@@ -38,7 +40,7 @@ export default {
     typeSelect(item) {
       return (
         <el-form-item prop={item.key}>
-          {item.label !== false && <div class="prepend small">{item.name}</div>}
+          {item.name !== false && <div class="prepend small">{item.name}</div>}
           <enhance-select
             v-model={this.searchData[item.key]}
             type={item.enumType}
@@ -47,6 +49,8 @@ export default {
             collapse={item.collapse}
             style={{...item.styles}}
             placeholder="全部"
+            key-value={item['key-value']}
+            clearable={item['clearable']}
           />
         </el-form-item>
       )
@@ -54,7 +58,7 @@ export default {
     typeDatePicker(item) {
       return (
         <el-form-item prop={item.key}>
-          {item.label !== false && <div class="prepend small">{item.name}</div>}
+          {item.name !== false && <div class="prepend small">{item.name}</div>}
           <el-date-picker
             style={{width: '220px', ...item.styles}}
             v-model={this.searchData[item.key]}
@@ -112,6 +116,7 @@ export default {
     return (
       <div class="searchBox">
         <el-form
+          model={this.searchData}
           props={{model: this.searchData}}
           label-width="85px"
           ref="formData"

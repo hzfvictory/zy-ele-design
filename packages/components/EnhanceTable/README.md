@@ -2,7 +2,7 @@
 
 ```vue
 <template>
-    <table-list 
+    <enhance-table 
         ref="table" 
         :multiple="true" 
         :otherTableParams="otherTableParams" 
@@ -10,7 +10,7 @@
     />
 </template>
 <script>
-  import TableList from "../components/EnhanceTable"
+  import EnhanceTable from "../components/EnhanceTable"
 
   export default {
     data() {
@@ -63,7 +63,7 @@
         ]
       }
     },
-    components: {TableList},
+    components: {EnhanceTable},
     methods: {
       async queryList() { // 子组件默认的请求名称
         // 因为当前算是父组件，当执行到父组件的created周期才会执行它的子组件，所以这个时候子组件的data的一些方法获取不到，或者可以在mounted周期里面执行异步请求
