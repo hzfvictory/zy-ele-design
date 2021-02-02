@@ -16,6 +16,8 @@ const searchFields = [
     enumType: {id: 'value', name: 'label'}, // 选框的数据格式化
     multiple: true,
     collapse: true,
+    disabled: true,
+    clearable: false,
     defaultValue: []
   },
   {
@@ -53,6 +55,8 @@ const searchFields = [
       type: 'select', 
       enums: [{label: '是', value: 1}, {label: '否', value: 0}], 
       enumType: {id: 'value', name: 'label'},
+      disabled: true,
+      clearable: false,
       defaultValue:[]
     },
     {
@@ -113,3 +117,5 @@ const searchFields = [
 |  multiple   |    是否支持多选    |   -   |   -   | false
 |  collapse   |    多选后以数字展示选择了多少个数     |  -    |  false    | 
 |  defaultValue   |   选框默认值      |   -   |  undefined    | 
+|  disabled   |   禁止使用选框      |   Boolean   |  false    | 
+|  clearable   |    是否显示清除按钮     |   Boolean   |  true    | 

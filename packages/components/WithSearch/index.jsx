@@ -29,10 +29,11 @@ export default {
         <el-form-item prop={item.key}>
           {item.name !== false && <div class="prepend small">{item.name}</div>}
           <el-input
-            clearable={true}
+            clearable={item['clearable'] !== false}
             style={{width: '160px', ...item.styles}}
             v-model={this.searchData[item.key]}
             placeholder={`请输入${item.name}`}
+            disabled={item['disabled']}
           />
         </el-form-item>
       )
@@ -50,7 +51,8 @@ export default {
             style={{...item.styles}}
             placeholder="全部"
             key-value={item['key-value']}
-            clearable={item['clearable']}
+            clearable={item['clearable'] !== false}
+            dis-all={item['disabled']}
           />
         </el-form-item>
       )
@@ -68,6 +70,8 @@ export default {
             end-placeholder="结束日期"
             value-format="yyyy-MM-dd"
             picker-options={{...this.picker_options, ...item.pickerOptions}}
+            disabled={item['disabled']}
+            clearable={item['clearable'] !== false}
           />
         </el-form-item>
       )

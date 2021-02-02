@@ -12,11 +12,11 @@
       @change="change"
       @input="input($event)">
     <el-option
-        v-for="item of data"
+        v-for="(item,index) of data"
         :disabled="item[type['id']] === disId"
         :label="item[type['name']]"
         :value="item[type['id']]"
-        :key="item[type['id']]"
+        :key="item[type['id']] + (index * index)"
     >
       {{renderLabel(item[type['id']],item[type['name']],keyValue)}}
     </el-option>

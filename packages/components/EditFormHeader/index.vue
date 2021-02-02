@@ -1,6 +1,6 @@
 <template>
     <div class="form-header">
-        <h3 class="form-title">{{title}}</h3>
+        <h3 class="form-title">{{title}} <i v-if="icon" @click="handleCLick" class="el-icon-info"/></h3>
         <span>{{tip}}</span>
     </div>
 </template>
@@ -8,7 +8,12 @@
 <script>
     export default {
         name: "",
-        props: ['title', 'tip']
+        props: ['title', 'tip', 'icon'],
+        methods: {
+            handleCLick() {
+                return typeof this.icon === "function" ? this.icon() : null;
+            }
+        }
     }
 </script>
 
@@ -30,8 +35,14 @@
         .form-title {
             font-size: 16px;
             font-weight: 600;
+
+            .el-icon-info {
+                font-size: 16px;
+                cursor: pointer;
+            }
         }
-        span{
+
+        span {
             color: #7F7F7F;
         }
     }
