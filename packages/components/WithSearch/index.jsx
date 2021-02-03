@@ -120,8 +120,13 @@ export default {
     return (
       <div class="searchBox">
         <el-form
-          model={this.searchData}
-          props={{model: this.searchData}}
+          {
+            ...{
+              props: {
+                model: this.searchData
+              }
+            }
+          }
           label-width="85px"
           ref="formData"
           inline

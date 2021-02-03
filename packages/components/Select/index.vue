@@ -16,7 +16,7 @@
         :disabled="item[type['id']] === disId"
         :label="item[type['name']]"
         :value="item[type['id']]"
-        :key="item[type['id']] + (index * index)"
+        :key="item[type['id']] + '--' + index"
     >
       {{renderLabel(item[type['id']],item[type['name']],keyValue)}}
     </el-option>
