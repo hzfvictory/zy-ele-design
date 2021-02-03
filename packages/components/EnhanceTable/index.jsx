@@ -105,9 +105,11 @@ export default {
               }
               return (
                 <el-table-column
-                  props={item}
                   key={item.prop}
                   {...{
+                    props: {
+                      ...item
+                    },
                     // 自定义的渲染方式，拓展性
                     scopedSlots: {
                       default: ({row, $index}) => {

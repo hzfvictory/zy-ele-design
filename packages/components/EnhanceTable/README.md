@@ -24,7 +24,7 @@
           }
         },
         otherPaginationParams: {},// 分页的参数
-        column: [  // table的列
+        column: [  // table的列  
           {
             prop: "roleId",
             label: "序号",
@@ -102,5 +102,5 @@
 | :-------------- | :---------- | :----------------- | :----------------------- |
 | otherTableParams  | { Object } |   ...   | 列表参数集合 |
 | otherPaginationParams   | {Object} |  ... | 分页参数集合      |
-| tableColumn | {Array} | []          |  列表column数据    |
+| tableColumn | {Array} | []          |  列表column数据 **必须写在data里面 或者单独抽离一个mixins,不会找不到h函数，获取不到上下文**    |
 | multiple | {Boolean}  |  false    | 列表是否支持多选    |

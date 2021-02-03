@@ -78,7 +78,7 @@ export const Rules = {
  * 保留两位小数
  * @param val 需要进行操作的数字
  */
-export const returnFloat = (val) => {
+export const returnFloat = (val = 0) => {
   let value = Math.round(parseFloat(val) * 100) / 100;
   let xsd = value.toString().split(".");
   if (xsd.length === 1) {
