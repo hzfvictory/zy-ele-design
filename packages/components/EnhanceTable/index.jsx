@@ -33,6 +33,31 @@ export default {
 
       return (
         !!item.list.length && item.list.map((item) => {
+
+          if (item.confirm) {
+            return (
+              <el-popconfirm
+                icon="el-icon-info"
+                iconColor="#f56c6c"
+                title={item.confirmTip || '是否继续操作'}
+                on-onConfirm={() => item.cb && item.cb(record)}
+                scopedSlots={{
+                  reference: () => {
+                    return (
+                      <el-button
+                        disabled={item.disabled}
+                        type="text"
+                        style={item.styles}
+                        size="small">
+                        {item.title}
+                      </el-button>
+                    );
+                  }
+                }}
+              />
+            )
+          }
+
           return (
             <el-button
               disabled={item.disabled}
@@ -40,7 +65,7 @@ export default {
               type="text"
               size="small"
               style={item.styles}
-              onClick={() => item.cb(record)}
+              onClick={() => item.cb && item.cb(record)}
             >
               {item.title}
             </el-button>
@@ -94,6 +119,9 @@ export default {
                     width={item.width || "88"}
                     fixed={item.fixed || "right"}
                     {...{
+                      props: {
+                        ...item
+                      },
                       scopedSlots: {
                         default: ({row}) => {
                           return this.handleButtons(item, row);
@@ -101,7 +129,8 @@ export default {
                       }
                     }}
                   />
-                );
+                )
+                  ;
               }
               return (
                 <el-table-column
