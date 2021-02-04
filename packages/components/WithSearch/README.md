@@ -33,9 +33,9 @@ const searchFields = [
 ];
 ```
 
-新增
+扩充组件
 
-![](https://tva1.sinaimg.cn/large/008eGmZEly1gnbirz1xajj30920490sq.jpg)
+<a href="https://tva1.sinaimg.cn/large/008eGmZEly1gnbirz1xajj30920490sq.jpg" target="_blank" rel="noopener noreferrer"><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gnbirz1xajj30920490sq.jpg" alt='图片加载失败'></a>
 
 ```javascript
 const searchFields = [
