@@ -33,6 +33,37 @@ const searchFields = [
 ];
 ```
 
+新增
+
+![](https://tva1.sinaimg.cn/large/008eGmZEly1gnbirz1xajj30920490sq.jpg)
+
+```javascript
+const searchFields = [
+{
+  key: 'changetype',
+  name: false,
+  type: 'select',
+  styles: {width: '90px', backgroundColor: '#F5F7FA', marginRight: '-10px',},
+  enums: [{id: 1, name: '渠道'}, {id: 2, name: '渠道号'}],
+  defaultValue: 1,
+  clearable: false,
+  'key-value': false
+},
+{
+  key: 'channelName',
+  name: false,
+  type: 'select',
+  enums: [{id: 1, name: 2323}, {id: 2, name: 444}, {id: 3, name: 555}, {id: 4, name: 666}],  // 选框的数据
+},
+{
+  key: 'channelId',
+  name: false,
+  placeholder: '请输入渠道号',
+  hidden: true
+}
+];
+```
+
 ### example 
 
 ```vue
@@ -110,12 +141,17 @@ const searchFields = [
 | 参数名   | 说明             |  可选值 | 默认值 |
 | :------- | :---------- |  :----- | :----- |
 |  key   |  传入 Form 组件的 model 中的字段     |   -   |   必填   | 
-|  name   |    标签文本     |      |      | 
+|  name   |    标签文本     |   false/String    |   必填   | 
 |  type   |    前选框类型     |    select   |   input   | 
 |  enums   |    前选框的数据     |  -    |  []    | 
 |  enumType   |   选框的数据格式化      |  -    |   {id:'id',name:'name'}   | 
 |  multiple   |    是否支持多选    |   -   |   -   | false
 |  collapse   |    多选后以数字展示选择了多少个数     |  -    |  false    | 
+|  key-value   |   select的key-value的形式    |   Boolean   |  true   | 
 |  defaultValue   |   选框默认值      |   -   |  undefined    | 
 |  disabled   |   禁止使用选框      |   Boolean   |  false    | 
 |  clearable   |    是否显示清除按钮     |   Boolean   |  true    | 
+|  styles   |    当前组件样式     |   Object   |  -    | 
+|  hidden   |    隐藏当前组件样式     |   Boolean   |  false    | 
+|  placeholder   |   占位内容    |   String   |  暂不支持时间组件    | 
+|  pickerOptions   |   时间格式   |   Object   |  -    | 

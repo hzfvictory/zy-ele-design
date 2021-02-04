@@ -26,13 +26,13 @@ export default {
   methods: {
     typeInput(item) {
       return (
-        <el-form-item prop={item.key}>
+        <el-form-item prop={item.key} style={{display: item.hidden ? 'none' : 'inline-block'}}>
           {item.name !== false && <div class="prepend small">{item.name}</div>}
           <el-input
             clearable={item['clearable'] !== false}
             style={{width: '160px', ...item.styles}}
             v-model={this.searchData[item.key]}
-            placeholder={`请输入${item.name}`}
+            placeholder={item.placeholder || `请输入${item.name}`}
             disabled={item['disabled']}
           />
         </el-form-item>
@@ -40,7 +40,7 @@ export default {
     },
     typeSelect(item) {
       return (
-        <el-form-item prop={item.key}>
+        <el-form-item prop={item.key} style={{display: item.hidden ? 'none' : 'inline-block'}}>
           {item.name !== false && <div class="prepend small">{item.name}</div>}
           <enhance-select
             v-model={this.searchData[item.key]}
@@ -49,7 +49,7 @@ export default {
             multiple={item.multiple}
             collapse={item.collapse}
             style={{...item.styles}}
-            placeholder="全部"
+            placeholder={item.placeholder || `全部`}
             key-value={item['key-value']}
             clearable={item['clearable'] !== false}
             dis-all={item['disabled']}
@@ -59,7 +59,7 @@ export default {
     },
     typeDatePicker(item) {
       return (
-        <el-form-item prop={item.key}>
+        <el-form-item prop={item.key} style={{display: item.hidden ? 'none' : 'inline-block'}}>
           {item.name !== false && <div class="prepend small">{item.name}</div>}
           <el-date-picker
             style={{width: '220px', ...item.styles}}
