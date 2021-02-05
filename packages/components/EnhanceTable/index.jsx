@@ -129,8 +129,7 @@ export default {
                       }
                     }}
                   />
-                )
-                  ;
+                );
               }
               return (
                 <el-table-column

@@ -54,11 +54,13 @@
             type: 'button',
             width: '118',
             label: "设置",
+            align: "right",
             list: [
               {title: '查看', disabled: false, styles: {color: '#777'}, cb: this.seeHandle},
-              {title: '编辑', cb: this.editHandle}
+              {title: '编辑', cb: this.editHandle},  // cb的形参为当前列的数据，只有一个
+              {title: '删除', styles: {color: 'red'}, cb: this.remove, confirm: true, confirmTip: "是否删除当前指标？"} // 微提示 confirm:true 
             ],
-            // handleButtons: () => (<div>111</div>)  // 自定义的内容
+            // handleButtons: () => (<div>111</div>)  // 自定义编辑的内容
           }
         ]
       }
@@ -74,14 +76,15 @@
           },
         });
         handlePageData(items, totalRecord); // mixin里面统一处理
-
+        // handlePageData(items, 0 , false); // 当数据只有一页，还要展示分页的时候 第三个参数为false
       },
       editHandle(...options) {
+        // 参数为当前列的数据
         console.log(options, '编辑');
       },
       seeHandle(...options) {
         console.log(options, '查看');
-      }
+      },
     },
     created() {
       this.$nextTick(this.queryList);
