@@ -3,7 +3,7 @@
       :value="value"
       :style="styles"
       :placeholder="placeholder"
-      filterable
+      :filterable="filterable"
       :multiple="multiple"
       :collapse-tags="collapse"
       :clearable="clearable"
@@ -39,6 +39,10 @@
       collapse: {
         type: Boolean,
         default: false
+      },
+      filterable: {
+        type: Boolean,
+        default: true
       },
       keyValue: {
         type: Boolean,

@@ -1,19 +1,24 @@
 {
   "name": "zy-ele-design",
-  "version": "0.6.26",
+  "version": "0.6.281",
   "main": "index.js",
-  "author": "hzfvictory",
-  "license": "MIT",
-  "keywords": [
-    "element-ui"
+  "files": [
+    "packages",
+    "utils"
   ],
   "description": "element-ui 后台项目前端组件封装和方法库",
   "dependencies": {
     "echarts": "^5.0.0",
     "resize-detector": "^0.2.2"
   },
+  "homepage": "https://github.com/hzfvictory/zy-ele-design/tree/master/packages/components",
   "repository": {
     "type": "git",
     "url": "git@github.com:hzfvictory/zy-ele-design.git"
-  }
+  },
+  "keywords": [
+    "element-ui"
+  ],
+  "author": "hzfvictory",
+  "license": "MIT"
 }

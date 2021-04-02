@@ -46,8 +46,9 @@ export default {
                     return (
                       <el-button
                         disabled={item.disabled}
-                        type="text"
                         style={item.styles}
+                        icon={item.icon}
+                        type="text"
                         size="small">
                         {item.title}
                       </el-button>
@@ -62,9 +63,10 @@ export default {
             <el-button
               disabled={item.disabled}
               key={item.title}
+              style={item.styles}
+              icon={item.icon}
               type="text"
               size="small"
-              style={item.styles}
               onClick={() => item.cb && item.cb(record)}
             >
               {item.title}

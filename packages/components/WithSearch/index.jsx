@@ -64,7 +64,7 @@ export default {
           <el-date-picker
             style={{width: '220px', ...item.styles}}
             v-model={this.searchData[item.key]}
-            type="daterange"
+            type={item.dataType || 'daterange'}
             range-separator="至"
             start-placeholder="开始日期"
             end-placeholder="结束日期"
