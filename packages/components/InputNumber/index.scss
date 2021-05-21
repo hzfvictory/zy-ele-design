@@ -1,5 +1,10 @@
 // input-number 组件用
 .zy_ele_design_input-number {
+  white-space: nowrap;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
   .input_number_text_left {
     .el-input__inner {
       text-align: left;
@@ -30,7 +35,6 @@
     width: auto;
     height: 32px;
     line-height: 32px;
-    vertical-align: initial;
   }
 }
 

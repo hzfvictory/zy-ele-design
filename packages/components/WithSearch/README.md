@@ -21,6 +21,20 @@ const searchFields = [
     defaultValue: []
   },
   {
+    key: "ds",
+    name: "时间",
+    type: "datePicker", 
+    dataType: "date", // 单天
+    styles: { width: "161px" },
+    pickerOptions: {
+        // element 时间组件的参数集
+        disabledDate(time) {
+            return time.getTime() > Date.now();
+        },
+    },
+    defaultValue: setPickerDefaultValue(1, 0)[0], // 默认是时间
+	},
+  {
     key: 'system',
     name: '系统',
     type: 'datePicker',
@@ -39,28 +53,35 @@ const searchFields = [
 
 ```javascript
 const searchFields = [
-{
-  key: 'changetype',
-  name: false,
-  type: 'select',
-  styles: {width: '90px', backgroundColor: '#F5F7FA', marginRight: '-10px',},
-  enums: [{id: 1, name: '渠道'}, {id: 2, name: '渠道号'}],
-  defaultValue: 1,
-  clearable: false,
-  'key-value': false
-},
-{
-  key: 'channelName',
-  name: false,
-  type: 'select',
-  enums: [{id: 1, name: 2323}, {id: 2, name: 444}, {id: 3, name: 555}, {id: 4, name: 666}],  // 选框的数据
-},
-{
-  key: 'channelId',
-  name: false,
-  placeholder: '请输入渠道号',
-  hidden: true
-}
+  {
+      key: 'changetype',
+      name: false,
+      type: 'select',
+      enums: [
+        // link: 指向要展示的 form 的 key; placeholder:要展示 form 的 placeholder
+        {id: 1, name: '渠道', link: 'channelName', placeholder: '全部渠道'}, 
+        {id: 2, name: '渠道号', link: 'channelId', placeholder: '渠道号'}
+      ],
+      defaultValue: 1,
+      clearable: false,
+      filterable: false,
+      'key-value': false
+    },
+    {
+      key: 'channelName',
+      name: false,
+      type: 'select',
+      enums: [{id: 1, name: 2323}, {id: 2, name: 444}, {id: 3, name: 555}, {id: 4, name: 666}],  // 选框的数据
+      placeholder: '全部渠道',
+      resetValue: true, // resetValue: 切换后数据重置，默认不重置
+    },
+    {
+      key: 'channelId',
+      name: false,
+      placeholder: '渠道号',
+      hidden: true,
+      defaultValue: ''
+    },
 ];
 ```
 

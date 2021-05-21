@@ -1,4 +1,5 @@
 import Select from "../Select"
+import "./index.scss"
 
 export default {
   data() {
@@ -25,8 +26,10 @@ export default {
   },
   methods: {
     typeInput(item) {
+      // style={{display: item.hidden ? 'none' : 'inline-block'}}
       return (
-        <el-form-item prop={item.key} style={{display: item.hidden ? 'none' : 'inline-block'}}>
+        !item.hidden &&
+        <el-form-item prop={item.key}>
           {item.name !== false && <div class="prepend small">{item.name}</div>}
           <el-input
             clearable={item['clearable'] !== false}
@@ -40,7 +43,8 @@ export default {
     },
     typeSelect(item) {
       return (
-        <el-form-item prop={item.key} style={{display: item.hidden ? 'none' : 'inline-block'}}>
+        !item.hidden &&
+        <el-form-item prop={item.key} class={item.enums?.[0]?.link && 'link-form-select'}>
           {item.name !== false && <div class="prepend small">{item.name}</div>}
           <enhance-select
             v-model={this.searchData[item.key]}
@@ -48,18 +52,21 @@ export default {
             data={item.enums}
             multiple={item.multiple}
             collapse={item.collapse}
-            style={{...item.styles}}
+            style={{width: (item.enums?.[0]?.link ? '90px' : '160px'), ...item.styles}}
             placeholder={item.placeholder || `全部`}
             key-value={item['key-value']}
             clearable={item['clearable'] !== false}
             dis-all={item['disabled']}
+            filterable={item['filterable']}
+            onChange={(val) => this.changeFormDom(val, item)}
           />
         </el-form-item>
       )
     },
     typeDatePicker(item) {
       return (
-        <el-form-item prop={item.key} style={{display: item.hidden ? 'none' : 'inline-block'}}>
+        !item.hidden &&
+        <el-form-item prop={item.key}>
           {item.name !== false && <div class="prepend small">{item.name}</div>}
           <el-date-picker
             style={{width: '220px', ...item.styles}}
@@ -68,6 +75,7 @@ export default {
             range-separator="至"
             start-placeholder="开始日期"
             end-placeholder="结束日期"
+            placeholder={'选择日期'}
             value-format="yyyy-MM-dd"
             picker-options={{...this.picker_options, ...item.pickerOptions}}
             disabled={item['disabled']}
@@ -106,7 +114,19 @@ export default {
       this.$nextTick(() => {
         onReset && onReset()
       })
-    }
+    },
+    changeFormDom(val, item) {
+      let enums = item.enums
+      if (!enums[0].link) return
+      for (let i = 0; i < enums.length; i++) {
+        let _index = this.searchProps.fields.findIndex((list) => list.key === enums[i].link)
+        this.searchProps.fields[_index].hidden = enums[i].id !== val;
+        this.searchProps.fields[_index].placeholder = enums[i].placeholder;
+        if (this.searchProps.fields[_index].resetValue) {
+          this.searchData[this.searchProps.fields[_index].key] = this.searchProps.fields[_index].defaultValue
+        }
+      }
+    },
   },
   computed: {
     handlerSearchData() {

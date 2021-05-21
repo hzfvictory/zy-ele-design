@@ -13,7 +13,7 @@
       @input="input($event)">
     <el-option
         v-for="(item,index) of data"
-        :disabled="item[type['id']] === disId"
+        :disabled="typeof item.disabled === 'boolean' ? item.disabled : item[type['id']] === disId"
         :label="item[type['name']]"
         :value="item[type['id']]"
         :key="item[type['id']] + '--' + index"

@@ -1,0 +1,33 @@
+.searchBox {
+  .link-form-select {
+    background-color: rgb(245, 247, 250);
+    margin-right: 0;
+
+    .el-input__inner {
+      background-color: transparent;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right: 0;
+      //border: 1px solid #DCDFE6;
+      transition: all 1000ms;
+    }
+
+    .el-select .el-input__inner:focus {
+      border-color: #409EFF;
+      box-shadow: 1px 0 0 0 #409EFF;
+      position: relative;
+      z-index: 10;
+    }
+  }
+
+  .link-form-select + .el-form-item {
+    .el-input__inner {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  .el-form-item--small .el-form-item__content {
+    line-height: 30px;
+  }
+}

@@ -10,6 +10,7 @@
    collapse
    placeholder="请选择" 
    :key-value="false"
+   :filterable='true'
    @change='fn'
    @focus='fn'
 />
@@ -25,6 +26,7 @@
 | multiple | {Boolean} | false          | 是否支持多选     |
 | collapse | {Boolean} | false          | 多选后以数字展示选择了多少个数     |
 | keyValue/key-value | {Boolean} | true          |  key-value的形式展示     |
+| filterable | {Boolean} | true          |  组件可搜索    |
 | disId/dis-id | {String, Number} |  ''          |  单个item不能选择     |
 | disAll/dis-all | {Boolean} |   false         | 当前的选框不能使用     |
 | type | {Object} |   { name: "name", id: "id"}   | 引导数据的格式转换    |
