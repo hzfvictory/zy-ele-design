@@ -48,7 +48,7 @@ export default {
       return (
         <el-form-item
           prop={item.key}
-          class={[item.classes, {'link-form-select': item.enums?.[0]?.link}]}
+          class={[item.classes, {'link-form-select': (item.enums && item.enums[0] && item.enums[0].link)}]}
           style={{display: item.hidden ? 'none' : 'inline-block'}}
         >
           {item.name !== false && <div class="prepend small">{item.name}</div>}
@@ -58,7 +58,7 @@ export default {
             data={item.enums}
             multiple={item.multiple}
             collapse={item.collapse}
-            style={{width: (item.enums?.[0]?.link ? '90px' : '160px'), ...item.styles}}
+            style={{width: ((item.enums && item.enums[0] && item.enums[0].link) ? '90px' : '160px'), ...item.styles}}
             placeholder={item.placeholder || `全部`}
             key-value={item['key-value']}
             clearable={item['clearable'] !== false}
@@ -137,7 +137,7 @@ export default {
         // 处理class
         let classes = fieldsItemData[_index].classes;
         fieldsItemData[_index].classes = classes ? classes : '';
-        if (!classes?.includes('link-border-left-none')) {
+        if (classes && !classes.includes('link-border-left-none')) {
           fieldsItemData[_index].classes += 'link-border-left-none ';
         }
 
