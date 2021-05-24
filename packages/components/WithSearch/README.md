@@ -58,9 +58,21 @@ const searchFields = [
       name: false,
       type: 'select',
       enums: [
-        // link: 指向要展示的 form 的 key; placeholder:要展示 form 的 placeholder
-        {id: 1, name: '渠道', link: 'channelName', placeholder: '全部渠道'}, 
-        {id: 2, name: '渠道号', link: 'channelId', placeholder: '渠道号'}
+       {
+         id: 1, name: '渠道',
+         link: {  // link: 指向要展示的from组件
+           key: 'channelName', // 展示form组件的key
+           placeholder: '全部渠道', // 展示form的 placeholder
+           resetValue: true, // form组件被切换后 数据重置，默认不重置
+         }
+       },
+       {
+         id: 2, name: '渠道ID',
+         link: {
+           key: 'channelId',
+           placeholder: '渠道号'
+         }
+       }
       ],
       defaultValue: 1,
       clearable: false,
@@ -73,7 +85,6 @@ const searchFields = [
       type: 'select',
       enums: [{id: 1, name: 2323}, {id: 2, name: 444}, {id: 3, name: 555}, {id: 4, name: 666}],  // 选框的数据
       placeholder: '全部渠道',
-      resetValue: true, // resetValue: 切换后数据重置，默认不重置
     },
     {
       key: 'channelId',

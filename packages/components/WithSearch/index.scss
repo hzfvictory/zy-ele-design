@@ -20,7 +20,7 @@
     }
   }
 
-  .link-form-select + .el-form-item {
+  .link-form-select + .el-form-item, .link-border-left-none {
     .el-input__inner {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;

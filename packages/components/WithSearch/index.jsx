@@ -26,10 +26,13 @@ export default {
   },
   methods: {
     typeInput(item) {
-      // style={{display: item.hidden ? 'none' : 'inline-block'}}
+      // style={{display: item.hidden ? 'none' : 'inline-block'}}  只能用 display:none，v-if会导致表单重置失效
       return (
-        !item.hidden &&
-        <el-form-item prop={item.key}>
+        <el-form-item
+          prop={item.key}
+          class={item.classes}
+          style={{display: item.hidden ? 'none' : 'inline-block'}}
+        >
           {item.name !== false && <div class="prepend small">{item.name}</div>}
           <el-input
             clearable={item['clearable'] !== false}
@@ -43,8 +46,11 @@ export default {
     },
     typeSelect(item) {
       return (
-        !item.hidden &&
-        <el-form-item prop={item.key} class={item.enums?.[0]?.link && 'link-form-select'}>
+        <el-form-item
+          prop={item.key}
+          class={[item.classes, {'link-form-select': item.enums?.[0]?.link}]}
+          style={{display: item.hidden ? 'none' : 'inline-block'}}
+        >
           {item.name !== false && <div class="prepend small">{item.name}</div>}
           <enhance-select
             v-model={this.searchData[item.key]}
@@ -65,8 +71,11 @@ export default {
     },
     typeDatePicker(item) {
       return (
-        !item.hidden &&
-        <el-form-item prop={item.key}>
+        <el-form-item
+          prop={item.key}
+          class={item.classes}
+          style={{display: item.hidden ? 'none' : 'inline-block'}}
+        >
           {item.name !== false && <div class="prepend small">{item.name}</div>}
           <el-date-picker
             style={{width: '220px', ...item.styles}}
@@ -119,11 +128,21 @@ export default {
       let enums = item.enums
       if (!enums[0].link) return
       for (let i = 0; i < enums.length; i++) {
-        let _index = this.searchProps.fields.findIndex((list) => list.key === enums[i].link)
-        this.searchProps.fields[_index].hidden = enums[i].id !== val;
-        this.searchProps.fields[_index].placeholder = enums[i].placeholder;
-        if (this.searchProps.fields[_index].resetValue) {
-          this.searchData[this.searchProps.fields[_index].key] = this.searchProps.fields[_index].defaultValue
+        const {key, placeholder, resetValue} = enums[i].link;
+        let fieldsItemData = this.searchProps.fields;
+        let _index = fieldsItemData.findIndex((list) => list.key === key)
+        fieldsItemData[_index].hidden = enums[i].id !== val;
+        fieldsItemData[_index].placeholder = placeholder;
+
+        // 处理class
+        let classes = fieldsItemData[_index].classes;
+        fieldsItemData[_index].classes = classes ? classes : '';
+        if (!classes?.includes('link-border-left-none')) {
+          fieldsItemData[_index].classes += 'link-border-left-none ';
+        }
+
+        if (resetValue) {
+          this.searchData[fieldsItemData[_index].key] = fieldsItemData[_index].defaultValue
         }
       }
     },
